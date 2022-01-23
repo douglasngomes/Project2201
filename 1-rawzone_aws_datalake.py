@@ -51,8 +51,8 @@ def lambda_handler(event: dict, context: dict) -> dict:
             url = base_url + "/sendMessage"
             requests.post(url=url, data=data, headers=headers)
 
-    except Exception as exc:
-        log.error(msg=exc)
+        except Exception as exc:
+            log.error(msg=exc)
 
     finally:
         return dict(statusCode="200")
